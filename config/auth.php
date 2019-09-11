@@ -41,10 +41,18 @@ return [
             'provider' => 'users',
         ],
 
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-        ],
+        // 'api' => [
+        //     // 'driver' => 'token',
+        //     // 'provider' => 'users',
+        //     // 'hash' => false,
+        //     'driver' => 'jwt',
+        //     'provider' => 'admins',
+        // ],
+
+        'member' => [
+            'driver' => 'jwt',
+            'provider' => 'members',
+        ]
     ],
 
     /*
@@ -65,15 +73,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
+
+        'members' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Entities\Member::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'users' => [
+            'driver' => 'database',
+            'table' => 'users',
+        ],
     ],
 
     /*
@@ -98,5 +107,4 @@ return [
             'expire' => 60,
         ],
     ],
-
 ];
