@@ -15,6 +15,7 @@ class FakerMemberSeeder extends Seeder
         DB::table('members')->insert([
             'name' => 'user',
             'email' => 'user@email.com',
+            'mobile' => '0912345678',
             'password' => bcrypt('aaaaaa'),
             'status' => 1,
             'created_at' => date('Y-m-d H:i:s'),

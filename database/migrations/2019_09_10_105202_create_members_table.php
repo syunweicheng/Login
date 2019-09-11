@@ -19,6 +19,7 @@ class CreateMembersTable extends Migration
 			$table->increments('id');
 			$table->string('name');
 			$table->string('password');
+			$table->string('mobile')->comment('mobile')->unique();
 			$table->string('email')->comment('電子信箱')->unique();
 			
 			$table->unsignedTinyInteger('status')->default(0)->comment('狀態');
