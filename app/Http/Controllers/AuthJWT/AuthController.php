@@ -84,7 +84,7 @@ class AuthController extends Controller
     public function user_login(Request $request)
     { 
         try{
-            $credentials = $request->only('email', 'password');
+            $credentials = $request->only('mobile', 'password');
             if (!$token = auth('member')->attempt($credentials)) {
                 throw new JWTException(); 
             }

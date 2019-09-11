@@ -26,6 +26,7 @@ class MemberTransformer extends TransformerAbstract
             'id' => (int)$model->id,
             'name' => $model->name,
             'email' => $model->email,
+            'mobile' => $model->mobile,
             'status' => (int)$model->status,
             'created_at' => ($model->created_at) ? Carbon::parse($model->created_at)->format('Y-m-d H:i:s') : "",
             'updated_at' => ($model->updated_at) ? Carbon::parse($model->updated_at)->format('Y-m-d H:i:s') : "",
